@@ -46,7 +46,7 @@ You can pass as many paths as you like, to load up as many as you want at a time
     i.e. GDProps C:\Windows\Notepad.exe "D:\Some Folder\Some File.xml" "E:\Some Other Folder\Some Other Sub Folder\Some File.dat" "D:"
 
     Note: if there are spaces in the path, wrap the entire path in double quotes, i.e. "C:\Some File.txt"
-          (*Pro Tip*: Just do that anyway out of habit, spaces in path or not, it’s good for ya.)
+          (Pro Tip: Just do that anyway out of habit, spaces in path or not, it’s good for ya.)
 
 
 When using it with a 3rd party utility, the utility usually offers some way to pass the selected path as a variable, in which cause you'd just do something similar to this:
