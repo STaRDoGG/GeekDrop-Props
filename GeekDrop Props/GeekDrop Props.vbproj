@@ -143,14 +143,14 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Screenshots\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\angel.png" />
     <Content Include="Images\btn_donate_LG.gif" />
     <Content Include="Images\close.png" />
     <Content Include="Images\favicon.ico" />
+    <Content Include="Images\Screenshots\GeekDrop-Props-Screenshot1.jpg" />
+    <Content Include="Images\Screenshots\GeekDrop-Props-Screenshot2.png" />
     <None Include="Images\GeekDrop Watermark %28New Cyan%29.png" />
     <Content Include="Images\GeekDrop.png" />
   </ItemGroup>
