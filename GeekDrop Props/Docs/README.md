@@ -1,14 +1,14 @@
-# ![YooHoo ...](https://github.com/STaRDoGG/geekdrop-peek/blob/master/GeekDrop%20Peek/Images/GeekDrop%20Peek.png)   GeekDrop Props #
-
 **A simple command-line utility to open the standard Windows Properties sheet by passing the file/folder/drive path to it.**
 
-**Tip:** If you want to skip reading all of this mumbo-jumbo, and just download the app right now, you can grab the compiled versions right here: https://github.com/STaRDoGG/geekdrop-props/releases
+**Tip:** If you want to skip reading all of this mumbo-jumbo, and just download the app right now, you can grab the compiled versions right here: https://github.com/STaRDoGG/GeekDrop-Props/releases
+
 
 
 
 ## Like GeekDrop Props and wanna donate? ##
 
-Why, thank ya kindly! You can do just that via Paypal! http://geekdrop.com/x/peek-donations
+Why, thank ya kindly! You can do just that via Paypal! http://geekdrop.com/x/props-donations
+
 
 
 
@@ -24,6 +24,7 @@ Interesting thing of note: while researching the making of this, it turns out so
 
 
 
+
 ## Installation? (We dun need no steenking installation!) ##
 
 This is a VERY easy app to use, and is designed to be 100% portable so that you can just move a single file wherever you want it; any folder, no setup program needed, it can be copied to a USB stick, whatever ya want. To use it just follow the steps below.
@@ -35,14 +36,14 @@ This is a VERY easy app to use, and is designed to be 100% portable so that you 
 
     i.e.: GDProps C:\Windows\Notepad.exe
 
-    You can pass as many paths as you like, to load up as many as you want at a time. Just add a space between each one.
+You can pass as many paths as you like, to load up as many as you want at a time. Just add a space between each one.
 
     i.e. GDProps C:\Windows\Notepad.exe "D:\Some Folder\Some File.xml" "E:\Some Other Folder\Some Other Sub Folder\Some File.dat" "D:"
 
     Note: if there are spaces in the path, wrap the entire path in double quotes, i.e. "C:\Some File.txt"
           (Pro Tip: Just do that anyway out of habit, spaces in path or not, it’s good for ya.)
 
-    When using it with a 3rd party utility, the utility usually offers some way to pass the selected path as a variable, in which cause you'd just do something similar to this:
+When using it with a 3rd party utility, the utility usually offers some way to pass the selected path as a variable, in which cause you'd just do something similar to this:
 
     GDProps.exe %P
 
@@ -62,9 +63,11 @@ Like I said, very simple.
 
 
 
+
 ## Uninstallation ##
 
 To uninstall it, just delete GDProps.exe and it’s gone. It installs absolutely nothing whatsoever, leaves no unwanted turds behind, nada.
+
 
 
 
@@ -74,27 +77,32 @@ To uninstall it, just delete GDProps.exe and it’s gone. It installs absolutely n
 
 
 
+
 ## Other Notes Worth a Mention ##
 
 * I've made sure to keep this completely compatible with the original Peek extension so that they don't conflict, you can have both installed and usable at the same time if you wish, assuming the original Peek extension is working on your system (probably before Windows 7).
 
 
 
+
 ## Screenshots ##
 
-**First time ya run it, you'll see this, prompting you to install the Strings "engine".**
+**This is whate we're talking about here ...**
 
-![First time ya run it, you'll see this, prompting you to install the Strings "engine".](https://github.com/STaRDoGG/geekdrop-peek/blob/master/GeekDrop%20Peek/Images/Screenshots/GeekDrop-Peek-Installation-Step1.jpg)
+![This is what we're talking about here ...](https://github.com/STaRDoGG/GeekDrop-Props/blob/master/GeekDrop%20Props/Images/Screenshots/GeekDrop-Props-Screenshot1.jpg)
+
 
 **The 'About' screen. Pretty, ain't it?**
 
-![The 'About' screen. Pretty, ain't it?](https://github.com/STaRDoGG/geekdrop-peek/blob/master/GeekDrop%20Peek/Images/Screenshots/GeekDrop-Peek-About.jpg)
+![The 'About' screen. Pretty, ain't it?](https://github.com/STaRDoGG/GeekDrop-Props/blob/master/GeekDrop%20Props/Images/Screenshots/GeekDrop-Props-Screenshot2.png)
+
 
 
 
 ## Other Links ##
 
-The "home page" of GeekDrop Props, is right here, don't be a stranger!: http://geekdrop.com/x/peek
+The "home page" of GeekDrop Props, is right here, don't be a stranger!: http://geekdrop.com/x/props
+
 
 
 
