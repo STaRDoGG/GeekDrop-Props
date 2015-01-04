@@ -86,13 +86,6 @@ To uninstall it, just delete GDProps.exe and it’s gone. It installs absolutely n
 
 
 
-## Other Notes Worth a Mention ##
-
-* I've made sure to keep this completely compatible with the original Peek extension so that they don't conflict, you can have both installed and usable at the same time if you wish, assuming the original Peek extension is working on your system (probably before Windows 7).
-
-
-
-
 ## Screenshots ##
 
 
