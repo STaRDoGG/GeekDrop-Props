@@ -12,9 +12,9 @@
 '
 ' getWindowList(SearchList)
 '
-' Returns each window as it's: ClassName, Hwnd, Window Title
+' Returns each window as it's: ClassName, Hwnd, Window Title, Top, Right, Bottom, Left (Screen coordinates)
 '
-' Example returned item: #32770, 1510814, QSnipps Properties
+' Example returned item: #32770, 1510814, QSnipps Properties, T: 1234, R: 4321, B: 123, L: 321
 '
 ' Example of how to handle the returned list:
 '
@@ -47,6 +47,15 @@ Module modEnumWindows
        ByVal lpClassName As System.Text.StringBuilder, _
        ByVal nMaxCount As Integer) As Integer
 
+    Private Declare Function GetWindowRect Lib "user32.dll" (ByVal hwnd As IntPtr, ByRef lpRect As RECT) As Long
+
+    Friend Structure RECT
+        Public left As Integer
+        Public top As Integer
+        Public right As Integer
+        Public bottom As Integer
+    End Structure
+
 #End Region
 
     Private Function EnumWindowProc(ByVal hwnd As IntPtr, ByVal lParam As Integer) As Boolean
@@ -54,6 +63,7 @@ Module modEnumWindows
         ' Working vars
         Dim sTitle As New StringBuilder(255)
         Dim sClass As New StringBuilder(255)
+        Dim Rect As New RECT()
 
         Try
 
@@ -61,9 +71,14 @@ Module modEnumWindows
             Call GetClassName(hwnd, sClass, 255)
             ' Fetch the Title of the window (if one)
             Call GetWindowText(hwnd, sTitle, 255)
+            ' Fetch the Coordinates/Size of the new Window
+            Call GetWindowRect(hwnd, Rect)
+
+            ' Set a default if no Window Title was found
+            If sTitle.Length = 0 Then sTitle.Append("No Title")
 
             ' Add it all to the List
-            lWindowList.Add(String.Format("{0}, {1}, {2}", sClass, hwnd, sTitle))
+            lWindowList.Add(String.Format("{0}, {1}, {2}, {3}, {4}, {5}, {6}", sClass, hwnd, sTitle, "T: " & Rect.top, "R: " & Rect.right, "B: " & Rect.bottom, "L: " & Rect.left))
 
         Catch ex As Exception
             errMessage = ex.Message

@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Display the Standard Windows Property Sheet via a Command-Line Call.")> 
 <Assembly: AssemblyCompany("J. Scott Elblein")> 
 <Assembly: AssemblyProduct("GeekDrop Props")> 
-<Assembly: AssemblyCopyright("Copyright © 2014")> 
+<Assembly: AssemblyCopyright("Copyright © 2015")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.1.0.0")> 
+<Assembly: AssemblyFileVersion("1.1.0.0")> 

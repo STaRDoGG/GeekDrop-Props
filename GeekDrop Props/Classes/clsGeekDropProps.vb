@@ -14,6 +14,19 @@ Imports System.Runtime.InteropServices
 
 Public Class GeekDropProps
 
+#Region "Declarations"
+
+    Public Declare Auto Function MoveWindow Lib "user32.dll" ( _
+        ByVal hWnd As IntPtr, _
+        ByVal X As Int32, _
+        ByVal Y As Int32, _
+        ByVal nWidth As Int32, _
+        ByVal nHeight As Int32, _
+        ByVal bRepaint As Boolean _
+    ) As Boolean
+
+#End Region
+
 #Region "Method 1"
     ' Uses ShellExecuteEx and Shellexecuteinfo
 

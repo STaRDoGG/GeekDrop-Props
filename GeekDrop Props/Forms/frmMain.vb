@@ -50,11 +50,14 @@ Public Class frmMain
 
         ' Calls the function to open the Properties sheet in it's own thread
         OpenProperties(DirectCast(e.Argument, String))
-
+ 
     End Sub
 
     Private Sub tmrMonitor_Tick(sender As Object, e As EventArgs) Handles tmrMonitor.Tick
         ' Timer checks every half second for any and all Properties sheets that are currently open. Once it finds NO more are open, the app closes itself.
+
+        ' Store the previous Properties sheet(s) hwnd(s), so we don't end up moving it/them more than once per timer tick
+        Static strRunning As New List(Of String)
 
         ' Create a List collection to store the upcoming running Windows list
         Dim SearchList As New List(Of String)
@@ -74,6 +77,61 @@ Public Class frmMain
             tmrMonitor.Enabled = False
             ' Exit the app
             Close_App()
+        ElseIf lFound.Count = 1 Then
+
+            ' If only 1 Properties Sheet, no sense in moving it; just store it's hwnd
+
+            ' Get the latest Last time in the list
+            Dim strWindow() As String = Split(lFound.Last, ",")
+
+            ' ... then store it's hwnd
+            strRunning.Add(Trim(strWindow(1)))
+        Else
+
+            ' More than 1 Properties sheet found in the lFound list, so we loop through them all, moving each to different spot on the screen
+            For intLoop As Integer = 0 To lFound.Count - 1
+
+                ' Split the string into an array for easier handling
+                Dim strWindow() As String = Split(lFound(intLoop), ",")
+
+                ' Trim the hwnd string once ...
+                Dim strHWND As String = Trim(strWindow(1))
+
+                If intLoop = 0 Then
+                    ' If it's the very first one, don't move it, just add it's hwnd to the list
+                    strRunning.Add(strHWND)
+                Else
+
+                    ' Otherwise, if it's the second one in the list, or up, move them ...
+
+                    ' Scan the List of hwnd's we've added to see if this particular one is already in it, if not, proceed, otherwise, skip it.
+                    If strRunning.Contains(strHWND) = False Then
+
+                        ' Store this new hwnd in the List
+                        strRunning.Add(strHWND)
+
+                        ' Generate a Random number
+                        Dim myRandom As New Random()
+
+                        ' Move the new Properties sheet to another location on the screen, so they don't all overlap each other,
+                        ' making them harder to see without first having to manually move them
+                        GeekDropProps.MoveWindow( _
+                            CType(strHWND, IntPtr), _
+                            myRandom.Next(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width), _
+                            myRandom.Next(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height), _
+                            Convert.ToInt32(strWindow(4).Replace("R: ", "")) - Convert.ToInt32(strWindow(6).Replace("L: ", "")), _
+                            Convert.ToInt32(strWindow(5).Replace("B: ", "")) - Convert.ToInt32(strWindow(3).Replace("T: ", "")), _
+                            True)
+
+                        ' We need to hold our proverbial horses a sec here, to give the Sheets time to place themselves,
+                        ' otherwise they 'll still end up on top of each other ...
+                        Threading.Thread.Sleep(100)
+                    End If
+
+                End If
+
+            Next intLoop
+
         End If
 
     End Sub
