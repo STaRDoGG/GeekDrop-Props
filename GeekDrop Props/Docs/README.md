@@ -111,6 +111,9 @@ The "home page" of GeekDrop Props, is right here, don't be a stranger!: http://g
 
 ## Changelog ##
 
+* Version 1.2
+	* Further tweaking to the Properties Sheet location opening(s) introduced in the 1.1 update, so that the Sheet(s) will also always fully be visible on-screen, rather than (potentially) partially off-screen.
+
 * Version 1.1
 	* In Version 1.0 when opening more than 1 Properties Sheet, they would open directly on top of each other, which got a bit confusing, so now when more than 1 is opened they'll all open in different areas of the screen.
 

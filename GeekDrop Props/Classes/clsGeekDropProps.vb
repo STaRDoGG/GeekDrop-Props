@@ -119,4 +119,45 @@ Public Class GeekDropProps
 
     End Function
 
+    Public Shared Function GenerateScreenCoords(ByVal WindowWidthRight As Integer, ByVal WindowWidthLeft As Integer, ByVal WindowHeightBottom As Integer, ByVal WindowHeightTop As Integer) As Integer()
+        ' This function generates screen X, Y coordinates that will keep a target Window within the user's visible viewing area, so that the entire window will always be shown,
+        ' and never cut off.
+        '
+        ' The parameters are the dimensions of the target window to be shown on the user's screen. (GetWindowRect is a good API for getting these)
+        '
+        ' Usage example:
+        '
+        ' Dim intXY() As Integer = GeekDropProps.GenerateScreenCoords(1234, 1234, 1234, 1234)
+        '
+        ' Returns:
+        ' Integer array. Element 0 = Width (X), Element 1 = Height (Y)
+        '
+        ' Note: Since this function takes KNOWN dimensions of the target window, use care when dealing with non-fixed sized target windows.
+        '       i.e. Using this to calculate the coords of a fixed size Windows Properties sheet, no problem; using it on a resizable Notepad window, untested so far.
+
+        ' Create an integer array of 2 elements
+        Dim intCalculated(1) As Integer
+
+        ' Generate a Random number
+        Dim myRandom As New Random()
+
+        ' These two vars take the dimensions of the target window to be displayed on the screen
+        Dim intWindowWidth As Integer = WindowWidthRight - WindowWidthLeft
+        Dim intWindowHeight As Integer = WindowHeightBottom - WindowHeightTop
+
+        ' These 2 vars get the user's display resolution, then subtract the dimensions of the window to be displayed,
+        ' effectively making the "display area" smaller, so that the random number generator doesn't generate a number that won't allow the target
+        ' window to fit on the screen completely.
+        Dim intScreenWidth As Integer = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - intWindowWidth
+        Dim intScreenHeight As Integer = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - intWindowHeight
+
+        ' Finally, generate the random numbers, using the above dimensions
+        intCalculated(0) = myRandom.Next(intScreenWidth)
+        intCalculated(1) = myRandom.Next(intScreenHeight)
+
+        ' Return them in an integer array
+        Return intCalculated
+
+    End Function
+
 End Class

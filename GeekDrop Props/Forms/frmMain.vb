@@ -110,17 +110,25 @@ Public Class frmMain
                         ' Store this new hwnd in the List
                         strRunning.Add(strHWND)
 
-                        ' Generate a Random number
-                        Dim myRandom As New Random()
+                        ' Generate Random X, Y coords
+                        Dim intXY() As Integer = GeekDropProps.GenerateScreenCoords( _
+                            Convert.ToInt32(strWindow(4).Replace("R: ", "")), _
+                            Convert.ToInt32(strWindow(6).Replace("L: ", "")), _
+                            Convert.ToInt32(strWindow(5).Replace("B: ", "")), _
+                            Convert.ToInt32(strWindow(3).Replace("T: ", "")))
+
+                        ' Calc Window dimensions and store them
+                        Dim intWindowWidth As Integer = Convert.ToInt32(strWindow(4).Replace("R: ", "")) - Convert.ToInt32(strWindow(6).Replace("L: ", ""))
+                        Dim intWindowHeight As Integer = Convert.ToInt32(strWindow(5).Replace("B: ", "")) - Convert.ToInt32(strWindow(3).Replace("T: ", ""))
 
                         ' Move the new Properties sheet to another location on the screen, so they don't all overlap each other,
                         ' making them harder to see without first having to manually move them
                         GeekDropProps.MoveWindow( _
                             CType(strHWND, IntPtr), _
-                            myRandom.Next(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width), _
-                            myRandom.Next(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height), _
-                            Convert.ToInt32(strWindow(4).Replace("R: ", "")) - Convert.ToInt32(strWindow(6).Replace("L: ", "")), _
-                            Convert.ToInt32(strWindow(5).Replace("B: ", "")) - Convert.ToInt32(strWindow(3).Replace("T: ", "")), _
+                            intXY(0), _
+                            intXY(1), _
+                            intWindowWidth, _
+                            intWindowHeight, _
                             True)
 
                         ' We need to hold our proverbial horses a sec here, to give the Sheets time to place themselves,
