@@ -1,3 +1,5 @@
+![Stats](https://github-readme-stats.vercel.app/api?username=STaRDoGG&repo=GeekDrop-Props&show_icons=true&theme=nord)
+
 **A simple command-line utility to open the standard Windows Properties sheet by passing the file/folder/drive path to it.**
 
 
@@ -46,7 +48,7 @@ You can pass as many paths as you like, to load up as many as you want at a time
     i.e. GDProps C:\Windows\Notepad.exe "D:\Some Folder\Some File.xml" "E:\Some Other Folder\Some Other Sub Folder\Some File.dat" "D:"
 
     Note: if there are spaces in the path, wrap the entire path in double quotes, i.e. "C:\Some File.txt"
-          (Pro Tip: Just do that anyway out of habit, spaces in path or not, it’s good for ya.)
+          (Pro Tip: Just do that anyway out of habit, spaces in path or not, itâ€™s good for ya.)
 
 
 When using it with a 3rd party utility, the utility usually offers some way to pass the selected path as a variable, in which cause you'd just do something similar to this:
@@ -54,7 +56,7 @@ When using it with a 3rd party utility, the utility usually offers some way to p
 
     GDProps.exe %P
 
-    Where %P is the variable the utility offers. Of course it may not literally be "%P", but that’s the idea.
+    Where %P is the variable the utility offers. Of course it may not literally be "%P", but thatâ€™s the idea.
 
 
 
@@ -65,7 +67,7 @@ When using it with a 3rd party utility, the utility usually offers some way to p
   **c)** If you pass *nothing* to it as a path, it'll just load up the "About" screen, with this information, plus the usual "About Screen" type of blather. Same thing happens if you just double-click the app's .exe. But you have to admit, it's purty, right?
 
 
-**2.)** Th-th-th-That’s all Folks!
+**2.)** Th-th-th-Thatâ€™s all Folks!
 
 Like I said, *very* simple.
 
@@ -74,7 +76,7 @@ Like I said, *very* simple.
 
 ## Uninstallation ##
 
-To uninstall it, just delete GDProps.exe and it’s gone. It installs absolutely nothing whatsoever, leaves no unwanted turds behind, nada.
+To uninstall it, just delete GDProps.exe and itâ€™s gone. It installs absolutely nothing whatsoever, leaves no unwanted turds behind, nada.
 
 
 
