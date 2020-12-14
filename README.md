@@ -1,4 +1,4 @@
-![Stats](https://github-readme-stats.vercel.app/api?username=STaRDoGG&repo=GeekDrop-Props&show_icons=true&theme=nord)
+[![Stats](https://github-readme-stats.vercel.app/api/pin/?username=STaRDoGG&repo=GeekDrop-Props&show_icons=true&theme=nord)](https://github.com/STaRDoGG/GeekDrop-Props)
 
 **A simple command-line utility to open the standard Windows Properties sheet by passing the file/folder/drive path to it.**
 
