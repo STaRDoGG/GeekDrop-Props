@@ -22,10 +22,10 @@ jobs:
     - name: Install .NET Framework 4.6.2 Developer Pack
       run: |
         # Download the offline installer
-        Invoke-WebRequest -Uri 'https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer' -OutFile 'ndp462-devpack-kb3151934-enu.exe'
+        Invoke-WebRequest -Uri 'https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net462-developer-pack-offline-installer' -OutFile 'dotnet-framework-462-devpack.exe'
 
         # Install the developer pack
-        Start-Process -Wait -FilePath 'ndp462-devpack-kb3151934-enu.exe'
+        Start-Process -Wait -FilePath 'dotnet-framework-462-devpack.exe'
 
         # Add the developer pack's tools to the PATH
         $env:PATH += ';C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.2 Tools\'
